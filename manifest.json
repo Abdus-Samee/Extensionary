@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "Extensionary",
+	"description": "A chrome extension to help students understand english words online",
+	"version": "0.0.1",
+	"icons": {
+		"64": "icon64.png",
+		"100": "icon100.png"
+	},
+	"browser_action": {
+		"default_popup": "popup.html",
+		"default_icon": "icon64.png"
+	},
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"]
+		}
+	],
+	"permissions": [
+		"contextMenus"
+	]
+}
