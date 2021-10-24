@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Extensionary",
-	"description": "A chrome extension to help students understand english words online",
+	"description": "A browser extension to help students understand english words online",
 	"version": "0.0.1",
 	"icons": {
 		"64": "icon64.png",

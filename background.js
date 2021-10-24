@@ -22,6 +22,7 @@ chrome.contextMenus.onClicked.addListener(function (clickData) {
             let definition;
             let phonetics;
             let s;
+            let speech;
 
             fetch(url2)
                 .then(response => response.json())
@@ -61,11 +62,12 @@ chrome.contextMenus.onClicked.addListener(function (clickData) {
                     if(word[0] >= '0' && word[0] <= '9') dir = "https://media.merriam-webster.com/audio/prons/en/us/mp3/number/";
                     else dir = "https://media.merriam-webster.com/audio/prons/en/us/mp3/" + word[0] + "/";
                     s = dir + res[0].hwi.prs[0].sound.audio + ".mp3"; 
+                    speech = 'PARTS OF SPEECH: ' + res[0].fl + '\n';
                     // s = '<audio controls><source type="audio/mpeg" src=' + s + '></audio>';
 
                     var aud = new Audio(s);
                     aud.addEventListener('ended', function() {
-                      alert(definition + phonetics);
+                      alert(definition + phonetics + speech);
                     });
 
                     aud.play();
